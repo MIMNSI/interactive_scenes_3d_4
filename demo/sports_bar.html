@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>3D Gaussian Splat Demo - Stump</title>
+  <script type="text/javascript" src="js/util.js"></script>
+  <script type="importmap">
+    {
+        "imports": {
+            "three": "./lib/three.module.js",
+            "@mkkellogg/gaussian-splats-3d": "./lib/gaussian-splats-3d.module.js"
+        }
+    }
+  </script>
+  <style>
+
+    body {
+      background-color: #000000;
+      height: 100vh;
+      margin: 0px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <script type="module">
+    import * as GaussianSplats3D from '@mkkellogg/gaussian-splats-3d';
+    const viewer = new GaussianSplats3D.Viewer({
+        'cameraUp': [0.00000, -1.00000, 0.00000],
+        'initialCameraPosition': [1.69470, -1.52585, 0.50571],
+        'initialCameraLookAt': [1.04353, -0.94270, 1.72470]
+    });
+    let path = 'assets/data/sports_bar/sports_bar_aligned';
+    path += isMobile() ? '.ksplat' : '.ksplat';
+    viewer.addSplatScene(path, {
+      'streamView': true
+    })
+    .then(() => {
+        viewer.start();
+    });
+  </script>
+</body>
+
+</html>
