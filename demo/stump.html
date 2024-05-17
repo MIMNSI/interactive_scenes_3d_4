@@ -40,7 +40,7 @@
         'initialCameraLookAt': [-0.04979, 1.37519, 1.13443],
         'sphericalHarmonicsDegree': 2
     });
-    let path = 'assets/data/stump/stump' + (mode ? '_high' : '') + '.ksplat';
+    let path = 'assets/data/stump/stump' + (mode ? '' : '') + '.ply';
     viewer.addSplatScene(path, {
       'streamView': true
     })
