@@ -3206,7 +3206,7 @@
             // Set to false to disable panning
             this.enablePan = true;
             this.panSpeed = 1.0;
-            this.screenSpacePanning = true; // if false, pan orthogonal to world-space direction camera.up
+            this.screenSpacePanning = false; // if false, pan orthogonal to world-space direction camera.up
             this.keyPanSpeed = 7.0; // pixels moved per arrow key push
             this.zoomToCursor = false;
 
@@ -3216,7 +3216,7 @@
             this.autoRotateSpeed = 2.0; // 30 seconds per orbit when fps is 60
 
             // The four arrow keys
-            this.keys = { LEFT: 'KeyA', UP: 'KeyW', RIGHT: 'KeyD', BOTTOM: 'KeyS' };
+            this.keys = { LEFT: 'ArrowLeft', UP: 'ArrowUp', RIGHT: 'ArrowRight', BOTTOM: 'ArrowDown' };
 
             // Mouse buttons
             this.mouseButtons = { LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.PAN };
@@ -9912,10 +9912,10 @@
                         this.focalAdjustment -= 0.02;
                         this.forceRenderNextFrame();
                     break;
-                    case 'ArrowLeft':
+                    case 'KeyA':
                         this.camera.up.transformDirection(tempMatrixLeft);
                     break;
-                    case 'ArrowRight':
+                    case 'KeyD':
                         this.camera.up.transformDirection(tempMatrixRight);
                     break;
                     case 'KeyC':
