@@ -396,10 +396,10 @@ export class Viewer {
                     this.focalAdjustment -= 0.02;
                     this.forceRenderNextFrame();
                 break;
-                case 'ArrowLeft':
+                case 'KeyA':
                     this.camera.up.transformDirection(tempMatrixLeft);
                 break;
-                case 'ArrowRight':
+                case 'KeyD':
                     this.camera.up.transformDirection(tempMatrixRight);
                 break;
                 case 'KeyC':
