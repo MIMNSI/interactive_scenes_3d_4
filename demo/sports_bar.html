@@ -22,12 +22,49 @@
       height: 100vh;
       margin: 0px;
     }
+    #instructions {
+        z-index: 100;
+				position: absolute;
+				top: 10px;
+				left: 15px;
+				background: rgba(0,0,0,0.6);
+				white-space: pre-wrap;
+				padding: 10px;
+				border-radius: 10px;
+				font-size: medium;
+			}
+      details {
+        color: aliceblue;
+				font-size: medium;
+
+			}
 
   </style>
 
 </head>
 
 <body>
+  <details>
+    <summary>Click here to see instructions.</summary>
+  <div id="instructions">movement (arrow keys)
+    - left/right arrow keys to strafe side to side
+    - up/down arrow keys to move forward/back
+    
+    trackpad
+    - scroll up/down/left/right to orbit
+    - pinch to move forward/back
+    - ctrl key + scroll to move forward/back
+    
+    mouse
+    - click and drag to orbit
+    - right click and drag up/down to move
+    
+    touch (mobile)
+    - one finger to orbit
+    - two finger drag to move side-to-side and forward/back
+    
+    </div>
+    </details>
   <script type="module">
     import * as GaussianSplats3D from '@mkkellogg/gaussian-splats-3d';
     const viewer = new GaussianSplats3D.Viewer({
